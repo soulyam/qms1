@@ -1,0 +1,115 @@
+<!--<div class="container">-->
+<!--  <br><br>-->
+<!--  <div class="row mx-auto">-->
+<!--    <div class="col-6">-->
+<!--      <form [formGroup]="caissierForm">-->
+<!--        <div class="mb-3">-->
+<!--          <label for="exampleInputEmail1" class="form-label">Email address ou login</label>-->
+<!--          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="login" >-->
+<!--          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--          <label for="exampleInputPassword1" class="form-label" >Password</label>-->
+<!--          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="pwd">-->
+<!--        </div>-->
+<!--        <div class="mb-3 form-check">-->
+<!--          <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--          <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary" >Submit</button>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+<script>
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
+
+<div class="container d-flex justify-content-center">
+  <div class="card mt-5 mb-5" style="border-radius: 0px 0px 0px 40px;width: 1000px;height: 703px;" >
+      <div class="row row-cols-2" >
+        <div class="col-6" >
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+
+            <div class="carousel-inner" style="border-radius: 5px 43px 5px 50px;">
+              <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1516146544193-b54a65682f16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="d-block w-100" alt="..." height="50%">
+                <div class="carousel-caption d-none d-md-block">
+                  <div class="d-flex justify-content-start mx-5 ms-5" style="background-color: firebrick;border: none;border-radius: 20px;width: 200px;height: 35px;margin-bottom: 170%;">
+                    <button type="submit" class="btn" style="color: aliceblue"><h6>Creer un compte</h6></button>
+                    <i class="material-icons align-self-center" style="color: aliceblue;">east</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">-->
+<!--              <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--              <span class="visually-hidden">Previous</span>-->
+<!--            </button>-->
+<!--            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">-->
+<!--              <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--              <span class="visually-hidden">Next</span>-->
+<!--            </button>-->
+
+          </div>
+        </div>
+        <div class="col-6 text-center" style="margin-top: 20%">
+                <div class="col-12 mt-5">
+                    <h3>Bienvenue !</h3>
+                </div>
+                <form [formGroup]="caissierForm" class="mt-4 needs-validation mx-auto" novalidate >
+                  <div class="col-md-8">
+                    <div class="input-group has-validation" style="margin-left: 23%">
+                      <span class="input-group-text" id="inputGroupPrepend" style="background-color: firebrick; border-radius: 20px 0px 0px 20px;border: none">
+                           <i class="material-icons" style="font-size: 30px; line-height: 30px;color: aliceblue">account_circle</i>
+                      </span>
+                      <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" formControlName="login" required style="border-radius:0px 20px 20px 0px;" placeholder="Login ou email">
+                      <div class="invalid-feedback">
+                        Please choose a username.
+                      </div>
+                    </div>
+                  </div>
+              <br>
+                  <div class="col-md-8">
+
+                    <div class="input-group has-validation" style="margin-left: 23%">
+                    <span class="input-group-text" id="inputGroupPrepend1" style="background-color: firebrick; border-radius: 20px 0px 0px 20px;border: none">
+                           <i class="material-icons" style="font-size: 30px; line-height: 30px;color: aliceblue">lock</i>
+                      </span>
+                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="pwd" required style="border-radius:0px 20px 20px 0px;" placeholder="Mot de passe">
+                      <div class="invalid-feedback">
+                        Please choose a username.
+                      </div>
+                    </div>
+                  </div>
+               <br>
+                  <div class="d-flex justify-content-around " style="background-color: firebrick;border: none;border-radius: 20px;width: 160px;height: 35px;margin-left: 50%">
+                    <button type="submit" class="btn" style="color: aliceblue;border: none" (click)="connexion()" ><h6>Connexion</h6></button>
+                    <i class="material-icons align-self-center" style="color: aliceblue;margin-right: 10%">east</i>
+                  </div>
+                </form>
+        </div>
+      </div>
+  </div>
+</div>
+

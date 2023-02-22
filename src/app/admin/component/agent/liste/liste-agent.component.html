@@ -1,0 +1,108 @@
+<nav class="navbar navbar" style="background-color: beige;">
+    <div class="container-fluid mx-auto">
+      <a class="navbar-brand">
+        <img src="../../../../assets/img/cbao.png" alt="" width="200" height="60" class="d-inline-block align-text-top">
+      </a>
+      <!-- <form class="d-flex justify-content-center">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      <form class="d-flex justify-content-end">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <!-- <h5 class="align-self-center me-2">{{ caissier.nomComp }}</h5> -->
+        <div class="align-self-center">
+            <i class="material-icons">expand_more</i>
+        </div>
+        <img src="../../../assets/img/im_1.JPG"  width="40" height="40" style="border-radius: 100%;">
+      </form>
+    </div>
+  </nav>
+  <div class="d-flex justify-content-star" style="background-color: aliceblue; height: 100%;">
+    <div class="card" style="border-top: none;border-bottom: none;border-left: none;width: 20%;">
+        <div class="card-body" style="height: 710px;">
+          <h4 class="card-title mt-3">Dashboard </h4>
+          <div class="card-text mt-4 ">
+            <div class="container ">
+                <div class="row">
+                    <div class="col col-md col-lg">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;"  >
+                            <i class="material-icons ms-2">home</i>
+                            <h5 class="align-self-start me-5">Dashboard</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col col-md col-lg">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;background-color: brown;" disabled>
+                            <i class="material-icons ms-2">manage_accounts</i>
+                            <h5 class="align-self-start me-5">Agent</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;" (click)="getCaissier();">
+                            <i class="material-icons ms-2">work</i>
+                            <h5 class="align-self-start me-5">Caissier</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col col-md col-lg">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;" (click)="getService();">
+                            <i class="material-icons ms-2">home_repair_service</i>
+                            <h5 class="align-self-start me-5">Service</h5>                            
+                        </button>
+                    </div>
+                </div>
+            </div>
+           
+          </div>
+          <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+        </div>
+      </div>
+    <div class="card w-100" style="border: none;height: auto;background-color: aliceblue;">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col mx-2">
+                    <h4>Liste des agents</h4>
+                </div>
+                <div class="col ms-5 d-flex justify-content-end">
+                    <!-- <div class="card">
+                        <div class="card-body">
+
+                        </div>
+                    </div> -->
+                    <button class="btn btn-primary d-flex justify-content-center" style="height: 40px;border-radius: 20px;">                            
+                            Ajouter un agent
+                            <i class="material-icons mb-2" style="width: 10%;">add</i>
+                    </button>
+                </div>
+
+                <div class="w-100"></div>
+                <hr>
+                <div class="col">
+
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body text-center mt-1">
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+          <div class="card mx-auto" style="width:100%;border: none;border-radius: 20px;">
+            <div class="card-body mt-2">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+            </div>
+          </div>
+         
+         
+        </div>
+      </div>
+      
+</div>
+
+  
+  

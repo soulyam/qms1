@@ -1,0 +1,181 @@
+<!-- <div class="d-flex justify-content-start mt-5 mx-5">
+  <img src="../../../../assets/img/cbao.png" alt="" width="300" height="100" class="d-inline-block align-text-top" style="margin-right: 50px;">
+  <div class="card w-100" style="border-color:#ED4235;border-width: 5px;border-top-left-radius: 20px;background-color: #ED4235;height: 80px;max-height:80px;">
+    <div class="body mx-5 text-end pb-3 me-3">
+      <h3 style="color: aliceblue" class="align-self-center mt-3">File d'attente</h3>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+<div class="card w-75 mx-5 mt-5 " style="border-color: #ED4235;border-width: 5px;border-radius: 10px;max-height: 460px;">
+  <div class="card-header text-white d-flex justify-content-between" style="background-color: #ED4235;">
+    <h4>Client appele</h4>
+  
+  </div>
+  <div class="card-body" >
+    <div class="container" *ngIf="ticketsE.length == 1;else noData">
+      <div class="row justify-content-center" *ngFor="let ticketE of ticketsE">
+        <div class="col-12 text-center">
+          <h2 class="text-center" style="color: #ED4235">EN SERVICE</h2>
+        </div>
+        <br><br>
+        <div class="col-12 text-center" >
+          <button type="button" class="btn" style="width: 250px;height: 250px;border-radius: 100%;background-color: #ED4235" >
+            <h2 style="color: aliceblue;font-size: 90px;line-height: 53px;"><b>{{ ticketE.numS }}</b></h2></button>
+        </div>
+        <br><br><br><br>
+        <div class="col-12 text-center pt-4">
+
+          <div class="row justify-content-md-center row-cols-auto">
+
+            <div class="col-12 text-center">
+              <h3 style="color: #ED4235;">Veuillez passer a la Caisse {{ ticketE.caissier }}</h3>
+            </div>          
+          </div>
+        </div>
+        <br>
+
+      </div>
+    </div>
+    <ng-template #noData>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h2 class="text-center" style="color: #ED4235">EN SERVICE</h2>
+        </div>
+        <br><br>
+        <div class="col-12 text-center" >
+          <button type="button" class="btn btn-light btn-lg" style="width: 250px;height: 250px;border-radius: 100%;background-color: #ED4235" >
+            <h2 style="color: aliceblue;font-size: 70px;line-height: 43px;"><b>Neant</b></h2></button>
+        </div>
+        <br><br><br><br>
+        <div class="col-12 text-center pt-4">
+
+          <div class="row justify-content-md-center row-cols-auto">
+
+            <div class="col-12 text-center">
+              <h3 style="color: #ED4235">Veuillez passer a la Caisse Neant</h3>
+            </div>
+           
+          </div>
+        </div>
+        <br>
+      </div>
+    </ng-template>
+  </div>
+  </div>
+  </div>
+  <div class="col-4 mt-5">
+ 
+   <div class="card me-5" style="border-color: #ED4235;border-width: 5px;border-radius: 10px;margin-left: -100px;height: 460px;">
+    <div class="card-body" style="height: 460px;max-height: 460px;">
+      <div class="card w-75 mx-auto mb-2 " *ngFor="let ticket of ticketsA" style="border-color: #ED4235;border-width: 5px;border-radius: 10px;">       
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title text-center">Numero {{ ticket.numS }}</h5>
+         
+          </div>
+         <div *ngIf="ticket.Statuts=='N'" class="d-flex justify-content-center text-center">
+          <i class="material-icons" style="color: red">error</i>
+          <p class="card-text align-self-center" style="color: red;"><b>Pas encore passer</b></p>
+         </div>
+         <div *ngIf="ticket.Statuts=='W'" class="d-flex justify-content-center text-center ">
+          <i class="material-icons" style="color: gray">hourglass_empty</i>
+          <p class="card-text align-self-center"><small class="text-muted" >En attente</small></p>
+         </div>
+         <div *ngIf="ticket.Statuts=='E'" class="d-flex justify-content-center text-center">
+          <i class="material-icons" style="color: darkgreen">check</i>
+        
+           <p class="card-text align-self-center" *ngIf="ticket.caissier !==0" style="color: darkgreen"><b>En Caisse {{ ticket.caissier}}</b></p>
+          <p class="card-text align-self-center" *ngIf="ticket.caissier === 0"></p>
+         </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</div> -->
+
+<!-- <div class="card w-75 mt-5 mx-auto" > *ngIf="ticketsE.length == 1;else noData" -->
+  <div class="card w-75 mt-5 mx-auto" *ngIf="ticketsE.length == 1;else noData" >
+    <div class="card-body" style="background-color: #F6B616;border: none;" *ngFor="let ticketE of ticketsE">
+      <div class="d-flex justify-content-between">
+        <div class="arrow-box">
+          <div class="arrow-box-rectangle">
+            <h1 class="card-title text-center" style="font-size: 150px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: aliceblue;">00{{ ticketE.numero }}</h1>
+          </div>
+          <div class="arrow-box-arrow"></div>
+        </div>
+        <div class="align-self-start">
+          <div class="card">
+            <div class="card-body" style="background-color: aliceblue;border: none;width: 200px;height: 200px;">
+              <div class="row">
+                <div class="col"><h1>GUICHET</h1></div>
+                <div class="col text-center" style="margin-top: -3%;">
+                  <h2 style="font-size: 100px;">0{{ ticketE.caissier }}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<ng-template #noData>
+<div class="card w-75 mt-5 mx-auto" >
+  <div class="card-body" style="background-color: #F6B616;border: none;">
+    <div class="d-flex justify-content-between">
+      <div class="arrow-box">
+        <div class="arrow-box-rectangle">
+          <h1 class="card-title text-center" style="font-size: 150px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: aliceblue;">0000</h1>
+        </div>
+        <div class="arrow-box-arrow"></div>
+      </div>
+      <div class="align-self-start">
+        <div class="card">
+          <div class="card-body" style="background-color: aliceblue;border: none;width: 200px;height: 200px;">
+            <div class="row">
+              <div class="col"><h1>GUICHET</h1></div>
+              <div class="col text-center" style="margin-top: -3%;">
+                <h2 style="font-size: 100px;">00</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</ng-template>
+
+
+<!-- <ng-template #noData>
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <h2 class="text-center" style="color: #ED4235">EN SERVICE</h2>
+    </div>
+    <br><br>
+    <div class="col-12 text-center" >
+      <button type="button" class="btn btn-light btn-lg" style="width: 250px;height: 250px;border-radius: 100%;background-color: #ED4235" >
+        <h2 style="color: aliceblue;font-size: 70px;line-height: 43px;"><b>Neant</b></h2></button>
+    </div>
+    <br><br><br><br>
+    <div class="col-12 text-center pt-4">
+
+      <div class="row justify-content-md-center row-cols-auto">
+
+        <div class="col-12 text-center">
+          <h3 style="color: #ED4235">Veuillez passer a la Caisse Neant</h3>
+        </div>
+       
+      </div>
+    </div>
+    <br>
+  </div>
+</ng-template> -->
+
+

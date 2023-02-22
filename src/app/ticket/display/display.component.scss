@@ -1,0 +1,21 @@
+.arrow-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    background-color: chocolate;
+  }
+  
+  
+  .arrow-box-arrow {
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-left: 50px solid chocolate;
+    border-bottom: 100px solid transparent;
+    position: absolute;
+    left: 100%;
+  }
+  

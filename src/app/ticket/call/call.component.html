@@ -1,0 +1,291 @@
+<!-- <div class="d-flex justify-content-center mt-5">
+  <img src="../../../../assets/img/cbao.png" alt="" width="200" height="80" class="d-inline-block align-text-top">
+  <div class="card mx-5 w-50" style="border-color: tomato;border-width: 5px;border-top-left-radius: 20px;">
+    <div class="mx-5 pb-3 me-3 d-flex justify-content-end">
+      <h5 class="align-self-center mt-3" style="color: tomato;">{{ caissier.nomComp }}</h5>
+      <span class="material-icons align-self-center mt-2">
+        expand_more
+        </span>
+      <a class="navbar-brand mx-2 mt-2" href="#">
+        <img src="../../../assets/img/im_1.JPG"  width="50" height="50" class="float-end" style="border-radius: 100%;">
+      </a>
+    </div>
+  </div>
+</div> -->
+
+<div class="d-flex justify-content-start mt-5 mx-5">
+  <img src="../../../../assets/img/cbao.png" alt="" width="300" height="100" class="d-inline-block align-text-top" style="margin-right: 50px;">
+  <div class="card w-100" style="border-color:#ED4235;border-width: 5px;border-top-left-radius: 20px;background-color: #ED4235;height: 80px;max-height:80px;">
+    <div class="mx-5 pb-3 me-3 d-flex justify-content-end">
+      <h5 class="align-self-center mt-3" style="color:aliceblue">{{ caissier.nomComp }}</h5>
+      <span class="material-icons align-self-center mt-3" style="color: aliceblue;">
+        expand_more
+        </span>
+      <a class="navbar-brand mx-2 mt-2" href="#">
+        <img src="../../../assets/img/im_1.JPG"  width="50" height="50" class="float-end" style="border-radius: 100%;">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mb-5">
+  <div class="col">
+<div class="card w-75 mx-auto mt-5" style="border-color: #ED4235;border-width: 5px;border-radius: 10px;">
+      <div class="card-header text-white d-flex justify-content-between" style="background-color: #ED4235;">
+        <h4>Caisse {{ caissier.caisse }} </h4>
+        <p class="align-self-center">{{ counter | date:'mm:ss:SS' }}</p>
+      </div>
+  <div class="card-body mt-2" >
+    <form [formGroup]="ticketUpForm">
+      <div *ngIf="ticketsE">
+        <div *ngIf="ticketsE.length == 1;else noData">
+          <div class="card-body mt-2"  *ngFor="let ticketF of ticketsE" >
+            <div class="container" >
+              <div class="row justify-content-center"  >
+                <div class="col-12 text-center">
+                  <h2 class="text-center" style="color: #ED4235">EN SERVICE</h2>
+                </div>
+                <br><br>
+                <div class="col-12 text-center" >
+                  <button type="button" class="btn btn-lg" style="background-color: #ED4235;width: 250px;height: 250px;border-radius: 100%;border: none;" disabled>
+                    <h2 style="color: aliceblue;font-size: 90px;line-height: 53px;"><b>{{ ticketF.numS}}</b></h2> </button>
+                </div>
+                <br><br><br><br>
+                <div class="col-12 text-center pt-4" >
+                  <div class="row justify-content-md-center row-cols-auto">
+                    <div class="col">
+                      <h5>{{ ticketF.nameS}}</h5>
+                    </div>
+                    <div class="col">
+                      <p>Caisse {{ caissier.caisse }}</p>
+                    </div>
+                  </div>
+                </div>
+                <br><br>
+
+                <div class="col-12 text-center pt-3">
+                  <div class="row justify-content-md-center row-cols-auto">
+                    <div class="col">
+                      <button type="submit" class="btn  btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: #17DC2B;" (click)="okbtnClick(ticketF.idT,ticketF.numero,caissier.caisse)">
+                        <!--                      <fa-icon [icon]="faCheck" style="color:aliceblue;"></fa-icon>-->
+                        <!-- <i class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">done</i> -->
+                        <span class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">
+                          download_done
+                          </span>
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-light btn-lg" style="width: 80px;height: 80px;background-color:red;border-radius: 100%;border: none;" (click)="nShowbtnClick(ticketF.idT,ticketF.numero,caissier.caisse)">
+                        <!--                      <fa-icon [icon]="faArrowRight" style="color:aliceblue"></fa-icon>-->
+                        <!-- <i class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">block</i> -->
+                        <span class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">
+                          skip_next
+                          </span>
+
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: blue;" >
+                        <!--                      <fa-icon [icon]="faMicrophone" style="color:aliceblue;"></fa-icon>-->
+                        <i class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">mic</i>
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn  btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: #EABD08;" (click)="notShowbtnClick(ticketF.idT,ticketF.numero,caissier.caisse)">
+                        <!-- <i class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">subdirectory_arrow_left</i> -->
+                        <span class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">
+                          autorenew
+                          </span>
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn  btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: dimgray;" (click)="callRecp(ticketF.idT,ticketF.numero,caissier.caisse)">
+                        <!-- <i class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">subdirectory_arrow_left</i> -->
+                        <span class="material-icons" style="font-size: 50px; line-height: 50px;color: aliceblue">
+                          
+                            account_balance_wallet
+                            
+                          </span>
+                      </button>
+                    </div>
+                    
+                    <!--                  <div class="col">-->
+                    <!--                    <button type="button" class="btn  btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: #D23939;" >-->
+                    <!--&lt;!&ndash;                      <fa-icon [icon]="faShare" style="color:aliceblue;"></fa-icon>&ndash;&gt;-->
+                    <!--                    </button>-->
+                    <!--                  </div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noData [ngIf]="!showBadge">
+        <div class="card-body mt-2">
+          <div class="container" >
+            <div class="row justify-content-center" >
+              <div class="col-12 text-center">
+                <h2 class="text-center" style="color: #ED4235;">EN SERVICE</h2>
+              </div>
+              <br><br>
+              <div class="col-12 text-center" >
+                <button type="button" class="btn  btn-lg" style="width: 250px;height: 250px;border-radius: 100%;background-color: #ED4235;border: none;" disabled>
+                  <h2 style="color: aliceblue;font-size: 50px;line-height: 53px;"><b>Neant</b></h2> </button>
+              </div>
+              <br><br><br><br>
+              <div class="col-12 text-center pt-4" >
+                <div class="row justify-content-md-center row-cols-auto" style="color: #ED4235">
+                  <div class="col">
+                    <h5>Nean</h5>
+                  </div>
+                  <div class="col">
+                    <p>Caisse Neant</p>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+
+              <div class="col-12 text-center pt-3">
+                <div class="row justify-content-md-center row-cols-auto">
+
+
+                  <div class="col" *ngFor="let ticket of ticketsF">
+                    <button type="button" class="btn btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: blue;" (click)="callT(ticket.idT,ticket.numero,caissier.caisse);">
+                      <!-- <i class="material-icons" style="font-size: 46px; line-height: 46px;color: aliceblue">mic</i> -->
+                      <span class="material-icons" style="font-size: 46px; line-height: 46px;color: aliceblue">
+                        call_made
+                        </span>
+                    </button>
+                  </div>
+
+                  <!--                  <div class="col">-->
+                  <!--                    <button type="button" class="btn  btn-lg" style="width: 80px;height: 80px;border-radius: 100%;background-color: #D23939;" >-->
+                  <!--&lt;!&ndash;                      <fa-icon [icon]="faShare" style="color:aliceblue;"></fa-icon>&ndash;&gt;-->
+                  <!--                    </button>-->
+                  <!--                  </div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ng-template>
+
+    </form>
+  </div>
+  </div>
+  </div>
+  <div class="col-1 " >
+    <button class="btn mt-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <i class="material-icons" style="font-size: 30px; line-height: 30px;color: #ED4235">tune</i>
+    </button>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">La File d'attente</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-8"><button class="btn btn-light btn-lg" (click)="showContentOne()"> Client en attente </button></div>
+            <div class="col"><button class="btn btn-light btn-lg" (click)="showContentTwo()">Autre </button></div>
+          </div>
+          <!--            <div class="row" >-->
+          <!--              <div class="col-12" *ngFor="let ticket of tickets">-->
+          <!--                <div class="d-flex justify-content-between">-->
+          <!--                  <h5>{{ ticket.numS }}</h5>-->
+          <!--                  <p class="align-self-center">{{ ticket.nameS }}</p>-->
+          <!--                </div>-->
+          <!--                <hr>-->
+          <!--                <br>-->
+          <!--              </div>-->
+
+          <!--            </div>-->
+
+
+          <div *ngIf="showContent1">
+            <div class="row mt-4" >
+              <div class="col-12" *ngFor="let ticket of tickets">
+                <div class="d-flex justify-content-between">
+                  <button type="button" class="btn" *ngIf="ticket.Statuts == 'C'" (click)="callT(ticket.idT,ticket.numero,caissier.caisse)">
+                    <i class="material-icons" style="font-size: 26px; line-height: 26px;color: #1FC4E9">history</i>
+                  </button>
+                  <h5 class="align-self-center">{{ ticket.numS }}</h5>
+                  <button type="button" class="btn align-self-center" *ngIf="ticket.Statuts == 'W'" disabled style="border: none">
+                    <p class="" style="color: blue">En attente</p>
+                  </button>
+                  <button type="button" class="btn align-self-center" *ngIf="ticket.Statuts == 'C'" disabled style="border: none">
+                    <p class="" style="color: #EABD08">Wallet</p>
+                  </button>
+                </div>
+                <hr>
+                <br>
+              </div>
+
+            </div>
+          </div>
+
+          <div *ngIf="showContent2">
+            <div class="row mt-4" >
+              <div class="col-12" *ngFor="let ticketD of ticketsD" style="border: none;">
+                <div class="d-flex justify-content-between">
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'P'" (click)="nShowbtnClick(ticketD.idT,ticketD.numero,caissier.caisse)" disabled style="border: none;">
+                    <i class="material-icons" style="font-size: 26px; line-height: 26px;color: gray">refresh</i>
+                  </button>
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'N'" (click)="callT(ticketD.idT,ticketD.numero,caissier.caisse)">
+                    <i class="material-icons" style="font-size: 26px; line-height: 26px;color: #1FC4E9">history</i>
+                  </button>
+
+                    <button type="button" class="btn" style="border: none"  *ngIf="ticketD.Statuts == 'S'" disabled>
+                      <i class="material-icons" style="font-size: 26px; line-height: 26px;color: #17DC2B">done</i>
+                    </button>
+                    <button type="button" class="btn" style="border: none"  *ngIf="ticketD.Statuts == 'E'" disabled>
+                      <i class="material-icons" style="font-size: 26px; line-height: 26px;color: #1FC4E9;">work</i>
+                    </button>
+                    <button type="button" class="btn" *ngIf="ticketD.Statuts == 'C'" (click)="callT(ticketD.idT,ticketD.numero,caissier.caisse)">
+                      <i class="material-icons" style="font-size: 26px; line-height: 26px;color: #1FC4E9">history</i>
+                    </button>
+                    
+
+                  <h5 class="align-self-center">{{ ticketD.numS }}</h5>
+
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'P'" disabled style="border: none">
+                    <p class="" style="color: red;">Pas Present</p>
+                  </button>
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'S'" disabled style="border: none">
+                    <p class="" style="color: #17DC2B">Servit</p>
+                  </button>
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'N'" disabled style="border: none">
+                    <p class="" style="color: gray">Peut repasser</p>
+                  </button>
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'E'" disabled style="border: none">
+                    <p class="" style="color: blue">En caisse</p>
+                  </button>
+                  <button type="button" class="btn" *ngIf="ticketD.Statuts == 'C'" disabled style="border: none">
+                    <p class="" style="color: #EABD08">Retrait code</p>
+                  </button>
+
+
+
+
+
+                </div>
+                <hr>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+

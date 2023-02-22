@@ -1,0 +1,126 @@
+<nav class="navbar navbar" style="background-color: beige;">
+    <div class="container-fluid mx-auto">
+      <a class="navbar-brand">
+        <img src="../../../../assets/img/cbao.png" alt="" width="200" height="80" class="d-inline-block align-text-top">
+      </a>
+      <!-- <form class="d-flex justify-content-center">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      <form class="d-flex justify-content-end">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <h5 class="align-self-center me-2">{{ caissier.nomComp }}</h5>
+        <div class="align-self-center">
+            <i class="material-icons">expand_more</i>
+        </div>
+        <img src="../../../assets/img/im_1.JPG"  width="60" height="50" style="border-radius: 100%;">
+      </form>
+    </div>
+  </nav>
+
+<div class="d-flex justify-content-star" style="background-color: aliceblue;">
+    <div class="card w-25" style="height: auto;border-top: none;border-bottom: none;border-left: none;">
+        <div class="card-body" >
+          <h4 class="card-title mt-3">Dashboard </h4>
+          <div class="card-text mt-4">
+            <div class="container ">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4 text-white" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;background-color: brown;" disabled>
+                            <i class="material-icons ms-3">home</i>
+                            <h5 class="align-self-start me-4">Dashboard</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;" (click)="getAgent();">
+                            <i class="material-icons ms-3">manage_accounts</i>
+                            <h5 class="align-self-start me-4">Agent</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;" (click)="getCaissier();">
+                            <i class="material-icons ms-3">work</i>
+                            <h5 class="align-self-start me-4">Caissier</h5>                            
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col">
+                        <button class="btn btn-light d-flex justify-content-between ms-5 ps-3 pe-4" style="width: 230px;border: none;border-radius: 20px 0px 0px 20px;" (click)="getService();">
+                            <i class="material-icons ms-3">home_repair_service</i>
+                            <h5 class="align-self-start me-4">Service</h5>                            
+                        </button>
+                    </div>
+                </div>
+            </div>
+           
+          </div>
+          <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+        </div>
+      </div>
+    <div class="card w-75" style="border: none;height: auto;background-color: aliceblue;">
+        <div class="card-body text-center mt-2">
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+          <div class="card mx-auto" style="height: 350px;width:90%;border: none;border-radius: 20px;">
+            <div class="card-body mt-2">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <br>
+          <div class="card mx-auto" style="height: 200px;width:90%;border: none;border-radius: 20px;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <br>
+          <div class="card mx-auto" style="height: 50px;width:90%;border: none;border-radius: 20px;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border: none;height: auto;background-color: aliceblue;">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+          <div class="card" style="height: 400px;border: none;border-radius: 20px;">
+            <div class="card-body">
+              <h6 class="card-title text-center">Diagramme pour la suivie des tickets journaliers</h6>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary"></a> -->
+              <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-start">
+                    <a href="#" class="btn btn-primary"style="border:none;border-radius:50%"></a>
+                    <p class="align-self-center">Pas Present</p>
+                </div>
+                <div class="d-flex justify-content-end mx-auto">
+                    <a href="#" class="btn btn-primary"style="border:none;border-radius:100%"></a>
+                    <p class="align-self-center">Pas Present</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <br>
+          <div class="card text-end" style="height: 400px;border: none;border-radius: 20px;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
